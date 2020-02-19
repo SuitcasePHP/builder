@@ -1,0 +1,54 @@
+{
+    "name": "suitcasephp/builder",
+    "type": "library",
+    "description": "A simple to use SDK builder for PHP.",
+    "homepage": "https://github.com/SuitcasePHP/builder",
+    "license": "MIT",
+    "keywords": [
+        "PHP",
+        "SDK",
+        "Suitcase",
+        "SDK Builder"
+    ],
+    "authors": [
+        {
+            "name": "Steve McDougall",
+            "email": "juststevemcd@gmail.com",
+            "homepage": "https://juststeveking.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~7.4",
+        "tightenco/collect": "^6.16",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Suitcase\\Builder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Suitcase\\Builder\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "symfony/var-dumper": "^5.0"
+    },
+    "scripts": {
+        "test:unit": "phpdbg -qrr ./vendor/bin/phpunit --testdox",
+        "test": [
+            "@test:unit"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
