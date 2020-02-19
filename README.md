@@ -3,7 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-A simple to use SDK builder for PHP. This package is still in beeta - but there should be no breaking changes.
+A simple to use SDK builder for PHP. This package is still in beta - but there should be no breaking changes.
 
 ## Install
 
