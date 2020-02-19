@@ -168,7 +168,7 @@ final class SDK
                 $uri,
                 $data
             );
-        } catch(GuzzleException $e) {
+        } catch (GuzzleException $e) {
             throw new ResourceException($e->getMessage());
         }
 

@@ -34,7 +34,7 @@ class ResourcesTest extends TestCase
         $sdk->add('posts', [
             'endpoint' => 'blog-posts'
         ]);
-        $this->assertContains('blog-posts', $sdk->getResources()->pluck('endpoint'));   
+        $this->assertContains('blog-posts', $sdk->getResources()->pluck('endpoint'));
     }
 
     public function testResourceCanSetAllowedMethodsIfNoneProvided()

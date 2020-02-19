@@ -21,7 +21,8 @@ class SDKTest extends TestCase
     public function testSdkCanBeCreated()
     {
         $this->assertInstanceOf(
-            SDK::class, $this->buildSDK()
+            SDK::class,
+            $this->buildSDK()
         );
     }
 
