@@ -1,6 +1,9 @@
 # Suitcase Builder SDK
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 A simple to use SDK builder for PHP. This package is still in beta - but there should be no breaking changes.
@@ -63,7 +66,13 @@ $sdk->use('posts')->delete(1); // delet the post with a identifier of 1
 
 [ico-version]: https://img.shields.io/packagist/v/suitcasephp/builder.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/suitcasephp/builder.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/SuitcasePHP/builder/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/SuitcasePHP/builder.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/SuitcasePHP/builder.svg?style=flat-square
 
+[link-travis]: https://travis-ci.org/SuitcasePHP/builder
+[link-scrutinizer]: https://scrutinizer-ci.com/g/SuitcasePHP/builder/code-structure
 [link-packagist]: https://packagist.org/packages/suitcasephp/builder
 [link-downloads]: https://packagist.org/packages/suitcasephp/builder
 [link-author]: https://github.com/JustSteveKing
+[link-code-quality]: https://scrutinizer-ci.com/g/SuitcasePHP/builder
