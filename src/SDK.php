@@ -153,11 +153,17 @@ final class SDK
         return $this->call($method, $this->resource['endpoint'] . '/' . (string) $identifier);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function checkAbility(string $method)
     {
         return collect($this->resource['allows'])->contains($method);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function call(string $method, string $endpoint, array $data = []): Response
     {
         $uri = $this->buildUri($endpoint);
@@ -175,6 +181,9 @@ final class SDK
         return $response;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function buildUri(string $endpoint): string
     {
         $uri = '';
@@ -194,6 +203,9 @@ final class SDK
         return $uri;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function allowedScheme(string $scheme): string
     {
         $scheme = strtolower($scheme);
