@@ -25,5 +25,6 @@ checks:
         fix_identation_4spaces: true
         fix_doc_comments: true
 
-external_code_coverage:
-    runs: 2
+tools:
+    external_code_coverage:
+        runs: 2
