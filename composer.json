@@ -39,7 +39,7 @@
         "symfony/var-dumper": "^5.0"
     },
     "scripts": {
-        "test:unit": "phpdbg -qrr ./vendor/bin/phpunit --testdox",
+        "test:unit": "phpdbg -qrr ./vendor/bin/phpunit --testdox --coverage-text --coverage-clover=coverage.clover",
         "test": [
             "@test:unit"
         ],
