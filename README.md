@@ -23,7 +23,7 @@ Building the SDK
 ```php
 use Suitcase\Builder\SDK;
 
-$sdk = new SDK('https://api.example.com');
+$sdk = SDK::make('https://api.example.com');
 ```
 
 Adding Resources to the SDK:
