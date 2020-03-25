@@ -71,6 +71,20 @@ $sdk->use('posts')->append('comments')->find(1);
 This will return a streamed response from the server from the URL: `/posts/1/comments`
 
 
+### Need to handle authenticated endpoints?
+
+There is a relatively simple approach to this using this package, first you must have an API token or be using basic auth:
+
+```php
+$sdk->use('users')->withAuthHeaders('your-api-token', 'Bearer')->get();
+```
+
+What happens here is the auth header will be set to: `Authorization: Bearer your-api-token` and added as a header in Guzzle.
+By default the type is not needed as it defaults to `Bearer` so omit this if you are using a bearer token.
+
+Please note that API authentication is not the main aim of this package, it is just a welcomed addition for some scenarios.
+
+
 [ico-version]: https://img.shields.io/packagist/v/suitcasephp/builder.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/suitcasephp/builder.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/SuitcasePHP/builder/master.svg?style=flat-square
