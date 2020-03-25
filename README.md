@@ -1,3 +1,9 @@
+<p align="center">
+
+![](screenshot.png)
+
+</p>
+
 # Suitcase Builder SDK
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -6,7 +12,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-A simple to use SDK builder for PHP. This package is still in beta - but there should be no breaking changes.
+A simple to use SDK builder for PHP.
 
 ## Install
 
