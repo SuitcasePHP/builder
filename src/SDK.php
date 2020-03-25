@@ -24,6 +24,8 @@ final class SDK
 
     protected string $path;
 
+    protected string $appends;
+
     protected array $url;
 
     protected Client $client;
@@ -37,7 +39,7 @@ final class SDK
         'https'
     ];
 
-    public function __construct(string $url)
+    private function __construct(string $url)
     {
         $parts = array_merge(parse_url($url));
 
@@ -47,6 +49,11 @@ final class SDK
         $this->client = new Client();
         $this->query = new ParameterBag();
         $this->resources = new Collection();
+    }
+
+    public static function make(string $url): self
+    {
+        return new self($url);
     }
 
     public function add(string $name, array $options = []): void
@@ -153,6 +160,13 @@ final class SDK
         return $this->call($method, $this->resource['endpoint'] . '/' . (string) $identifier);
     }
 
+    public function append(...$appends): self
+    {
+        $this->appends = implode('/', $appends);
+
+        return $this;
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -164,7 +178,7 @@ final class SDK
     /**
      * @codeCoverageIgnore
      */
-    protected function call(string $method, string $endpoint, array $data = []): Response
+    protected function call(string $method, string $endpoint, array $data = []): \Psr\Http\Message\ResponseInterface
     {
         $uri = $this->buildUri($endpoint);
 
@@ -199,6 +213,8 @@ final class SDK
         $uri .= rtrim($this->getPath(), '/');
 
         $uri .= '/' . rtrim($endpoint, '/');
+
+        $uri .= '/' . rtrim($this->appends, '/');
 
         return $uri;
     }

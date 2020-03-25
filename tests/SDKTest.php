@@ -15,7 +15,7 @@ class SDKTest extends TestCase
 {
     protected function buildSDK(string $url = 'https://api.example.com'): SDK
     {
-        return new SDK($url);
+        return SDK::make($url);
     }
 
     public function testSdkCanBeCreated()

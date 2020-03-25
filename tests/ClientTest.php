@@ -11,7 +11,7 @@ class ClientTest extends TestCase
 {
     protected function buildSDK(string $url = 'https://my-json-server.typicode.com/typicode/demo'): SDK
     {
-        return new SDK($url);
+        return SDK::make($url);
     }
 
     public function testClientReturnsHttpOkOnAllResources()
@@ -69,6 +69,17 @@ class ClientTest extends TestCase
         $sdk = $this->buildSDK();
         $sdk->add('posts');
         $response = $sdk->use('posts')->delete(1);
+        $this->assertEquals(
+            200,
+            $response->getStatusCode()
+        );
+    }
+
+    public function testClientCanAppendSubResourcesToExtendUri()
+    {
+        $sdk = $this->buildSDK();
+        $sdk->add('posts');
+        $response = $sdk->use('posts')->append('comments')->find(1);
         $this->assertEquals(
             200,
             $response->getStatusCode()
