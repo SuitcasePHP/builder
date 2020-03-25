@@ -24,9 +24,11 @@ final class SDK
 
     protected string $path;
 
-    protected string $appends;
+    protected string $appends = '';
 
     protected array $url;
+
+    protected string $authHeader = '';
 
     protected Client $client;
 
@@ -167,6 +169,13 @@ final class SDK
         return $this;
     }
 
+    public function withAuthHeaders(string $credentials, string $type = 'Bearer'): self
+    {
+        $this->authHeader = "{$type} {$credentials}";
+
+        return $this;
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -181,6 +190,10 @@ final class SDK
     protected function call(string $method, string $endpoint, array $data = []): \Psr\Http\Message\ResponseInterface
     {
         $uri = $this->buildUri($endpoint);
+
+        if ($this->authHeader !== '') {
+            $data['headers']['Authorization'] = "{$this->authHeader}";
+        }
 
         try {
             $response = $this->client->request(
