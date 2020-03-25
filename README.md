@@ -63,6 +63,13 @@ $sdk->use('posts')->update(1, []); // update a post with an identifier of 1
 $sdk->use('posts')->delete(1); // delet the post with a identifier of 1
 ```
 
+You also have the ability to append sub-resources onto the query using the new `append` method:
+
+```php
+$sdk->use('posts')->append('comments')->find(1);
+```
+This will return a streamed response from the server from the URL: `/posts/1/comments`
+
 
 [ico-version]: https://img.shields.io/packagist/v/suitcasephp/builder.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/suitcasephp/builder.svg?style=flat-square
